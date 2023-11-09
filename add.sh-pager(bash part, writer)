@@ -1,6 +1,5 @@
 #!/bin/bash
-
-connect="mysql -u user -p1 -h 192.168.4.142 data"
+connect="mysql -u user -p1 -h localhost data"
 
 echo "Enter text: "
 read text
@@ -14,11 +13,17 @@ checkPass=$( echo "$pass" | cracklib-check | grep OK | wc -l )
 if [[ $checkpass == 1 ]]; then break;else continue; fi
 done
 
+hashId=$( echo -n "$id" | openssl dgst -md5 | sed 's|.* ||' )
 hashPass=$( echo -n "$pass" | openssl dgst -md5 | sed 's|.* ||' )
-cryptoText=$( echo "$text" | openssl enc -base64 -e -aes-256-cbc -nosalt -pass pass:$pass)
+cryptoText=$( echo -n $text | openssl enc -aes-256-cbc -a -K 3204 -iv 3204 -nosalt )
 
-$(echo "INSERT INTO secret (id, pass, msg) VALUES ('$id', '$hashPass', '$cryptoText');" | $connect)
+$(echo "INSERT INTO secret (id, pass, msg) VALUES ('$hashId', '$hashPass', '$cryptoText');" | $connect)
+
+clear
 
 echo "You id: "$id
+echo "You hash id: "$hashId
 echo "You pass: "$pass
+echo "You hashPass: "$hashPass
 echo "You text: "$text
+echo "You crypto text: "$cryptoText
