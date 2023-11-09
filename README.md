@@ -24,9 +24,9 @@ Settings system:
 
 yum install epel-release nano wget httpd mariadb mariadb-server yum-utils -y
 
-sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
-sudo yum-config-manager ––enable remi–php71
+yum-config-manager ––enable remi–php71
 
 yum install php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysql –y
 
@@ -47,6 +47,8 @@ FLUSH PRIVILEGES;
 exit
 
 firewall-cmd --permanent --zone=public --add-port=80/tcp --add-port=3306/tcp
+
+firewall-cmd --reload
 
 firewall-cmd --reload
 
