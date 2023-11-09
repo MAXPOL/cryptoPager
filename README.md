@@ -12,9 +12,9 @@ For work project need basic programm: opeenssl, httpd, php, maridb, nano.
 
 For work project need additional programm: HeidiSQL(or equivalent), web-browser
 
-You need create DB: DB name: data : Table name: secret : Columns: id (int, AI, key); pass(varchar(50)); msg(text)
+You need create DB: DB name: data : Table name: secret : Columns: id (int, AI, key) or (varhar(50) if you want make id as hash; pass(varchar(50)); msg(text)
 
-Approximate view of a database with data
+Approximate view of a database with data (with hash as id)
 
 ![alt text](https://bppk.info/pictures/dbcryptoexample.png)
 
