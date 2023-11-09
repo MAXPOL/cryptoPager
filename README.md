@@ -1,4 +1,4 @@
-# pager-openssl-bash-php
+# Pager (openssl-bash-php)
 
 Need execute task for learn work with openssl library  in linux command line (bash) and with php programming language. 
 
@@ -53,3 +53,5 @@ firewall-cmd --reload
 firewall-cmd --reload
 
 mkdir /scripts && touch add.sh && chmod +x add.sh && chmod 0777 add.sh
+
+###index.php need be in /var/www/html/
