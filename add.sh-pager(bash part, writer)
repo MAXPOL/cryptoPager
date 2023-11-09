@@ -15,7 +15,7 @@ done
 
 hashId=$( echo -n "$id" | openssl dgst -md5 | sed 's|.* ||' )
 hashPass=$( echo -n "$pass" | openssl dgst -md5 | sed 's|.* ||' )
-cryptoText=$( echo -n $text | openssl enc -aes-256-cbc -a -K 3204 -iv 3204 -nosalt )
+cryptoText=$( echo -n $text | openssl enc -aes-256-cbc -a -K 0000 -iv 0000 -nosalt ) # Need change -K and -iv
 
 $(echo "INSERT INTO secret (id, pass, msg) VALUES ('$hashId', '$hashPass', '$cryptoText');" | $connect)
 
