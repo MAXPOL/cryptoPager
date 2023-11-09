@@ -1,0 +1,49 @@
+<?php
+$mysqli = mysqli_connect("localhost", "user", "1", "data");
+
+if (isset($_POST['check'])){
+
+$id = $_POST['id'];
+
+$password = $_POST['password'];
+$hash_password = openssl_digest ($password , "md5");
+
+echo "You enter id: ". $id;
+echo "<br>";
+echo "You enter pass: ". $password;
+echo "<br>";
+echo "You enter hashpass: ". $hash_password;
+echo "<br>";
+
+$result = mysqli_query($mysqli, "SELECT id, pass, msg FROM secret WHERE id = '$id' AND pass = '$hash_password';");
+
+$row = mysqli_fetch_assoc($result);
+
+$dbid = $row['id'];
+
+$dbmsg = $row['msg'];
+
+echo "Crypto text: ". $dbmsg;
+
+$decryptomsg="YOU NEED USE OPENSSL INSIDE PHP FOR DECRYPT";
+echo "<br>";
+echo "Decrypto text: ". $decryptomsg;
+
+}
+
+?>
+
+<html>
+<head>
+ <title>Авторизация</title>
+</head>
+<body>
+ <form method="POST" action="">
+  <input name="id" type="login" placeholder="id"/>
+  <input name="password" type="password" placeholder="Password"/>
+  <br><br>
+  <input type="submit" name="check" value="View"/>
+ </form>
+</body>
+</html>
+
