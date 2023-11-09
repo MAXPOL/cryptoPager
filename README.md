@@ -1,0 +1,1 @@
+# pager-openssl-bash-php-
