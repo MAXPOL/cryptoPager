@@ -12,13 +12,12 @@ For work project need basic programm: opeenssl, httpd, php, maridb, nano.
 
 For work project need additional programm: HeidiSQL(or equivalent), web-browser
 
-You need create DB:
+You need create DB: DB name: data : Table name: secret : Columns: id (int, AI, key); pass(varchar(50)); msg(text)
 
-DB name: data
+Approximate view of a database with data
 
-Table name: secret
+![alt text](https://bppk.info/pictures/dbcryptoexample.png)
 
-Columns: id (int, AI, key); pass(varchar(50)); msg(text)
 
 Settings system:
 
