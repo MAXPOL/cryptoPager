@@ -1,0 +1,24 @@
+#!/bin/bash
+
+connect="mysql -u user -p1 -h 192.168.4.142 data"
+
+echo "Enter text: "
+read text
+
+id=$(( $RANDOM % 50 + 1 ))
+
+for ((i=0; i<10; i++))
+do
+pass=$( openssl rand -base64 3 )
+checkPass=$( echo "$pass" | cracklib-check | grep OK | wc -l )
+if [[ $checkpass == 1 ]]; then break;else continue; fi
+done
+
+hashPass=$( echo -n "$pass" | openssl dgst -md5 | sed 's|.* ||' )
+cryptoText=$( echo "$text" | openssl enc -base64 -e -aes-256-cbc -nosalt -pass pass:$pass)
+
+$(echo "INSERT INTO secret (id, pass, msg) VALUES ('$id', '$hashPass', '$cryptoText');" | $connect)
+
+echo "You id: "$id
+echo "You pass: "$pass
+echo "You text: "$text
