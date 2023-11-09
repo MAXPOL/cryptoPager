@@ -1,4 +1,5 @@
 <?php
+
 $mysqli = mysqli_connect("localhost", "user", "1", "data");
 
 if (isset($_POST['check'])){
@@ -38,6 +39,7 @@ echo "Decrypto text: ". $decryptomsg;
 }
 
 ?>
+
 <html>
 <head>
  <title>Авторизация</title>
