@@ -1,4 +1,4 @@
-# Pager (openssl-bash-php)
+# cryptoPager (openssl-bash-php)
 
 add.sh-pager(bash part, writer)
 
