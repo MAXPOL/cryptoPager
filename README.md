@@ -55,6 +55,5 @@ firewall-cmd --reload
 
 firewall-cmd --reload
 
-mkdir /scripts && touch add.sh && chmod +x add.sh && chmod 0777 add.sh
-
+### add.sh need be in /scripts/
 ###index.php need be in /var/www/html/
