@@ -39,18 +39,3 @@ echo "Decrypto text: ". $decryptomsg;
 }
 
 ?>
-
-<html>
-<head>
- <title>Авторизация</title>
-</head>
-<body>
- <form method="POST" action="">
-  <input name="id" type="login" placeholder="id"/>
-  <input name="password" type="password" placeholder="Password"/>
-  <br><br>
-  <input type="submit" name="check" value="View"/>
- </form>
-</body>
-</html>
-
