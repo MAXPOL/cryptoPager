@@ -23,37 +23,9 @@ Approximate view of a database with data (with hash as id)
 ![alt text](https://bppk.info/pictures/dbcryptoexample.png)
 
 
-Settings system:
+Settings system: settings.sh
 
-yum install epel-release nano wget httpd mariadb mariadb-server yum-utils -y
 
-yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-
-yum-config-manager ––enable remi–php71
-
-yum install php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysql –y
-
-systemctl start maridb && systemctl enable mariadb
-
-systemctl start httpd && systemctl enable httpd
-
-mysql_secure_installation | ENTER – y -1 -1 y -n -y -y 
-
-mysql -u root -p1
-
-CREATE USER ‘user’@’%’ IDENTIFIED BY ‘1’;
-
-GRANT ALL PRIVILEGES ON *.* TO ‘user’@’%’;
-
-FLUSH PRIVILEGES;
-
-exit
-
-firewall-cmd --permanent --zone=public --add-port=80/tcp --add-port=3306/tcp
-
-firewall-cmd --reload
-
-firewall-cmd --reload
 
 ###add.sh need be in /scripts/
 
