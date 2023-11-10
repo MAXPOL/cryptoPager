@@ -38,4 +38,6 @@ echo "Decrypto text: ". $decryptomsg;
 
 }
 
+include 'appearance.html';
+  
 ?>
