@@ -56,4 +56,5 @@ firewall-cmd --reload
 firewall-cmd --reload
 
 ###add.sh need be in /scripts/
+
 ###index.php need be in /var/www/html/
