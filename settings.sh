@@ -4,7 +4,7 @@ passworddb="1"
 
 yum install epel-release nano wget httpd mariadb mariadb-server yum-utils -y
 
-yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 yum-config-manager ––enable remi–php71
 
@@ -25,9 +25,9 @@ y
 y
 EOF
 
-mysql -u root -p1 -e "CREATE USER ‘user’@’%’ IDENTIFIED BY ‘1’;"
+mysql -u root -p1 -e "CREATE USER 'user'@'%' IDENTIFIED BY '1';"
 
-mysql -u root -p1 -e "GRANT ALL PRIVILEGES ON *.* TO ‘user’@’%’;"
+mysql -u root -p1 -e "GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';"
 
 mysql -u root -p1 -e "FLUSH PRIVILEGES;"
 
