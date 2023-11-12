@@ -25,6 +25,10 @@ y
 y
 EOF
 
+mysql -u root -p1 -e "CREATE DATABASE data CHARACTER SET utf8 COLLATE utf8_general_ci;"
+
+mysql -u root -p1 -e "use data; CREATE TABLE secret ( id VARCHAR(50), pass  VARCHAR(50), msg TEXT );"
+
 mysql -u root -p1 -e "CREATE USER 'user'@'%' IDENTIFIED BY '1';"
 
 mysql -u root -p1 -e "GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';"
