@@ -10,7 +10,7 @@ yum-config-manager ––enable remi–php71
 
 yum install php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysql –y
 
-systemctl start maridb && systemctl enable mariadb
+systemctl start mariadb && systemctl enable mariadb
 
 systemctl start httpd && systemctl enable httpd
 
