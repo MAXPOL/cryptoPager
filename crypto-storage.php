@@ -2,7 +2,7 @@
 
 # GENERAL INTERFACE
 // GENERAL 
-echo "<html><head><link href='css/bootstrap.min.css' rel='stylesheet'></head><body>dsfdg";
+echo "<html><head><link href='css/bootstrap.min.css' rel='stylesheet'></head><body>";
 echo "<div class='p-3 mb-2 bg-secondary text-white'>Our project allows you to safely exchange files</div>";
 echo "<center>";
 echo "<h1>Encrypted File Sharing</h1>";
